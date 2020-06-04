@@ -1,12 +1,12 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
-import { GeneralInfoComponent } from './builder/general-info/general-info.component';
+import { GeneralInfoComponent } from './general-info/general-info.component';
 
 
 const routes: Routes = [
   {
-   path: "builder",
-   loadChildren: () => import('./builder/builder.module').then(m => m.BuilderModule)
+   path: "",
+   component: GeneralInfoComponent
   }
 ];
 
