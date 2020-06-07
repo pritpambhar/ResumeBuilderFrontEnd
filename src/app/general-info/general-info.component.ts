@@ -1,5 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import * as Chartist from 'chartist';
+import { GeneralInfoService } from './general-info.service';
+import { Router } from '@angular/router';
+
 
 @Component({
   selector: 'app-general-info',
@@ -8,7 +11,7 @@ import * as Chartist from 'chartist';
 })
 export class GeneralInfoComponent implements OnInit {
 
-  constructor() { }
+  constructor(private lService : GeneralInfoService) { }
   startAnimationForLineChart(chart){
       let seq: any, delays: any, durations: any;
       seq = 0;
@@ -145,5 +148,13 @@ export class GeneralInfoComponent implements OnInit {
 
       //start animation for the Emails Subscription Chart
       this.startAnimationForBarChart(websiteViewsChart);
+  }
+
+  onSubmit() {
+    const addData = {};
+    console.log("helo");
+    // // this.lService.addGeneralInfo(addData).subscribe(response => {
+    //   console.log(response);
+    // })
   }
 }
